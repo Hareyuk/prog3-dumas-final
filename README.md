@@ -2,6 +2,17 @@ yarn add cookie js-cookie
 
 yarn add firebase 
 
+yarn add axios
+
+
+// NOT... or yes
+
+
+yarn add next@latest react@latest react-dom@latest
+
+npm install next@latest react@latest react-dom@latest
+
+//
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
