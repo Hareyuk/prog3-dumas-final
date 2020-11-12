@@ -1,5 +1,5 @@
-import { Main } from 'containers'
-import { Header } from 'components'
+import { Main } from 'containers';
+import { Header } from 'components';
 
 const Layout = ({children}) => {
     return (

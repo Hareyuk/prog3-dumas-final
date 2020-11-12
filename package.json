@@ -12,12 +12,12 @@
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-styled-components": "^1.11.1",
     "cookie": "^0.4.1",
-    "firebase": "^8.0.0",
+    "firebase": "^8.0.1",
     "formik": "^2.2.1",
     "js-cookie": "^2.2.1",
     "next": "^10.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.1"
   }
 }

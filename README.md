@@ -4,8 +4,8 @@ yarn add firebase
 
 yarn add axios
 
+yarn add react
 
-// NOT... or yes
 
 
 yarn add next@latest react@latest react-dom@latest
