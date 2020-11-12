@@ -11,10 +11,10 @@ const Home = () => {
                     ¡Bienvenidos!
                 </div>
                 <div className="btnsUser">
-                    <Link href="/api/auth/signup">
+                    <Link href="/signup">
                             <a>Sign Up</a>
                     </Link>
-                    <Link href="/api/auth/login">
+                    <Link href="/login">
                             <a>Login</a>
                     </Link>
                 </div>
@@ -24,9 +24,11 @@ const Home = () => {
                 <h1>Lista de juegos</h1>
                 <div className="btnsUser">
                     <Link href="/games/1">
-                            <a><div>
+                            <a>
+                                <div>
                                     <img src="/img/imgPrueba.png" alt="juego"/>
-                                </div></a>
+                                </div>
+                            </a>
                     </Link>
                     <Link href="/games/2">
                             <a><div>

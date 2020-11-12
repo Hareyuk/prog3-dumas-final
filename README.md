@@ -6,7 +6,7 @@ yarn add axios
 
 yarn add react
 
-
+npm install
 
 yarn add next@latest react@latest react-dom@latest
 
