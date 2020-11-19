@@ -2,9 +2,19 @@ import Head from 'next/head';
 import {ContWidthFull} from 'components';
 import {Container} from './styled';
 import Link from 'next/link';
+import firebase from "firebase/app";
+import "firebase/auth";
+import {useState} from 'react';
 
 const Header = () => {
-    const login = false;
+    var isUser = firebase.auth().currentUser;
+    const [isLog, setLog] = useState((isUser == null ? false : true));
+    const signOut = ()=>
+    {
+        FirebaseAuth.getInstance().signOut();
+        setLog(false);
+    }
+
     return (
         <>
             <ContWidthFull>
@@ -27,8 +37,8 @@ const Header = () => {
                             <a>About</a>
                             </Link>
                         </li>
-                        {!login ? "" : ( <li>
-                            <Link href="/auth/logout">
+                        {!isUser ? "" : ( <li>
+                            <Link href="#" onClick={()=>signOut()}>
                             <a>Log out</a>
                             </Link>
                         </li> )}

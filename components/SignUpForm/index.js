@@ -8,7 +8,7 @@ const SignUpForm = () => {
     return (
         <Container>
             <Formik
-                initialValues={{ email: '', password: '', name: '' }}
+                initialValues={{ email: '', password: '', nickname: '' }}
                 validate={values => {
                     const errors = {};
                     if (!values.email) {
@@ -17,8 +17,8 @@ const SignUpForm = () => {
                     if (!values.password) {
                         errors.password = 'Required';
                     }
-                    if (!values.name) {
-                        errors.name = 'Required';
+                    if (!values.nickname) {
+                        errors.nickname = 'Required';
                     }
                     return errors;
                 }}
@@ -28,7 +28,7 @@ const SignUpForm = () => {
                             const res = await axios.post('api/auth/register', values)
                             const data = await res.data
                             setSubmitting(false);
-                            setMessage(`${data.message} - ${data.name}`)
+                            setMessage(`${data.message} - ${data.nickname}`)
                         } catch (error) {
                             if (error.response) {
                                 /*
@@ -65,8 +65,8 @@ const SignUpForm = () => {
                             <ErrorMessage name="password" component="div" />
                         </div>
                         <div className="input_row">
-                            <Field type="text" name="name" placeholder="Nombre" />
-                            <ErrorMessage name="name" component="div" />
+                            <Field type="text" name="nickname" placeholder="Apodo" />
+                            <ErrorMessage name="nickname" component="div" />
                         </div>
                         <button type="submit" disabled={isSubmitting}>
                             Submit

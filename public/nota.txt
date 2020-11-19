@@ -1,0 +1,31 @@
+Al crear usuarios, qué necesito:
+mail
+apodo
+contraseña
+
+Extras de usuarios:
+
+foto de perfil
+puntaje-juego 1: ID en donde puntaje de juego 1
+puntaje-juego 2: ID en donde puntaje e juego 2
+
+
+
+
+----
+
+Cada juego:
+su ID
+Puntaje: numero
+ID_user: ID de usuario conectado
+
+
+ACCIONES:
+-Subir el dato de crear usuario (esto ya está)
+-Login (login)
+-Subir imagen al Storage y cambiar el URL del IMG Profile del usuario
+-Subir el puntaje a su juego con su puntaje (PROCESO)
+-Recibir info de usuario
+-Actualizar apodo
+-Recibir info de puntajes para los rankings
+

@@ -3,10 +3,11 @@ import { db, auth } from "lib/firebase";
 import cookie from "cookie";
 export default async (req, res) => {
     const {
-        name,
+        //name,
         //  lastname,
         //  username,
         // dni,
+        nickname,
         email,
         password,
     } = req.body;
@@ -24,13 +25,16 @@ export default async (req, res) => {
                 .doc(response.user.uid)
                 .set(
                     {
-                        nombre: name,
+                        //nombre: name,
                         //  apellido: lastname,
                         //   username,
                         //   dni,
-                        favoritos: [],
+                        //favoritos: [],
                         email: email,
-                        posts: []
+                        nickname: nickname,
+                        profilePic: "null",
+                        puntos: []
+                        //posts: []
                     }
                 )
                 .then(() => {
@@ -39,7 +43,7 @@ export default async (req, res) => {
                     // Manda la usuario dentro del browser
                     // res.writeHead(302, { Location: "/login" }); //NOT WORKING
 
-                    res.status(200).json({ message: 'Usuario Creado', name, email })
+                    res.status(200).json({ message: 'Usuario Creado', nickname, email })
                     res.end();
                 })
                 .catch((error) =>
