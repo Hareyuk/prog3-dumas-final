@@ -9,15 +9,25 @@ import {useState} from 'react';
 const Header = () => {
     var isUser = firebase.auth().currentUser;
     const [isLog, setLog] = useState((isUser == null ? false : true));
-    const signOut = ()=>
+    const logout  = async  ()=>
     {
-        FirebaseAuth.getInstance().signOut();
-        setLog(false);
+        return auth
+            .signOut()
+            .then(() => {
+                // Sign-out successful.
+                router.push("/login");
+                setLog(false);
+            })
+            .catch((e) => {
+                console.error(e);
+            });
+        /* FirebaseAuth.getInstance().signOut();
+        setLog(false); */
     }
 
     return (
         <>
-            <ContWidthFull>
+            <ContWidthFull BColor="#EBE655">
                 <Container>
                     <img src="/img/minilogo.png" alt="logo"/>
 
@@ -38,7 +48,7 @@ const Header = () => {
                             </Link>
                         </li>
                         {!isUser ? "" : ( <li>
-                            <Link href="#" onClick={()=>signOut()}>
+                            <Link href="/login" onClick={()=>logout()}>
                             <a>Log out</a>
                             </Link>
                         </li> )}

@@ -12,6 +12,12 @@ yarn add next@latest react@latest react-dom@latest
 
 npm install next@latest react@latest react-dom@latest
 
+npm install react-router-dom
+
+npm install --save react router
+
+
+
 //
 
 

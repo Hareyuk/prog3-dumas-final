@@ -3,6 +3,7 @@ import { Container as Content } from './styled';
 import Link from 'next/link';
 import React, {useState} from 'react';
 
+
 //https://react-firebase-js.com/docs/react-firebase-auth/getting-started
 //https://stackoverflow.com/questions/58406027/check-if-user-is-logged-in-or-not-using-firebase-in-react
 import firebase from "firebase/app";
