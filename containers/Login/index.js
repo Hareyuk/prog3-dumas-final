@@ -1,11 +1,13 @@
 import {LoginForm} from 'components';
+import { Container as Content } from './styled';
 
 const Login = () => {
     return (
-        <div>
+        <Content>
             <h1>Login</h1>
             <LoginForm/>
-        </div>
+            <img src="/img/who_login.png" alt="Quién se logea?"/>
+        </Content>
     )
 }
 

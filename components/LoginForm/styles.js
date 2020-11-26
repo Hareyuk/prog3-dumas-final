@@ -7,7 +7,7 @@ export const Container = styled.div`
     right: 22px;
     color:#ff0000;
 }
-margin-top:40px;
+padding-top:3em;
 width:100%;
 input,
 select, 

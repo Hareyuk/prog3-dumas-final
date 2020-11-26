@@ -3,13 +3,13 @@ import { Header } from 'components';
 
 const Layout = ({children}) => {
     return (
-        <div>
-            <Header />
-            <Main>
+        <>
+            {/* <Header/>*/}
+            <Main> 
                 {children}
             </Main>
             {/* footer */}
-        </div>
+        </>
     )
 }
 

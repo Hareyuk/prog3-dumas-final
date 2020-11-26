@@ -1,7 +1,7 @@
-import {ContWidthFull} from 'components';
 import { Container as Content } from './styled';
 import Link from 'next/link';
 import React, {useState} from 'react';
+import {Header} from 'components';
 
 
 //https://react-firebase-js.com/docs/react-firebase-auth/getting-started
@@ -16,18 +16,23 @@ const Home = () => {
         name = isUser.nickname;
         profilePic = isUser.profilePic;
       }
-    console.log(isUser, " - ", profilePic);
-    const listGames = [{name: "juego 1", img: "/img/imgPrueba.png", desc: "uwu"}, {name: "juego 2", img: "/img/imgPrueba.png", desc: "uwu"}];
+    //console.log(isUser, " - ", profilePic);
+    const listGames = [{name: "juego 1", img: "/img/juego_1.png", desc: "Descripción de videojuego 1 aún sin pensar"}, {name: "juego 2", img: "/img/juego_2.png", desc: "Descripción de videojuego 2 aún sin pensar"}];
     return (
         <Content>
             <section>
-                <h1>Home</h1>
+                <h1 className="fonted">Home</h1>
                 {isUser != null ? (
                 <div className="infoTextFull">
-                    ¡Bienvenidos!
+                    <div>
+                    ¡Bienvenido a Rankaming! Ya que estás logeado... <br/><br/> ¿A qué jugarás ahora? ¿Tenés ganas de estar entre los primeros del ranking? ¡Ánimos! ¡Rankaming te apoya! <br/><br/>¡Ve adelante y dá con todo!
+                    </div>
                 </div>) : 
                 <div className="infoText">
-                    ¡Bienvenidos!
+                    <div>
+                        ¡Bienvenido a Rankaming! Un sitio web pequeño de juegitos donde la gente puede participar y subir sus puntajes al ranking en tiempo global. ¿Estás dispuesto a entrar? ¿Llegarás a estar entre los primeros?<br/><br/>¡Hacete una cuenta o inicia sesión si ya tienes!
+                        uwu
+                    </div>
                 </div>}
                 
 
@@ -45,29 +50,30 @@ const Home = () => {
             </section>
 
             <section>
-                <h1>Lista de juegos</h1>
-                <div className="btnsUser">
-                    {listGames.map((game, index)=>{
-                        {isUser == null ? ( 
-                        <Link href={"/games/" + index}>
-                            <a>
-                                <div>
-                                    <img src={game.img} alt={game.name}/>
-                                </div>
-                            </a>
-                        </Link>
-                        )
-                    :(
-                        <Link href={"/games/" + index}>
-                            <a>
-                                <div>
-                                    <img src={game.img} alt={game.name}/>
-                                    <h3>{game.name}</h3>
-                                    <p>{game.desc}</p>
-                                </div>
-                            </a>
-                        </Link>
-                    )}})}
+                <h1 className="fonted">Lista de juegos</h1>
+                <div className="btnsGames">
+                    {
+                        listGames.map((game, index)=>
+                                (isUser != null ? 
+                                    <Link href={"/games/" + index}>
+                                    <a>
+                                        <div>
+                                            <img src={game.img} alt={game.name}/>
+                                            <h3>{game.name}</h3>
+                                            <p>{game.desc}</p>
+                                        </div>
+                                    </a>
+                                </Link>
+                                    : 
+                            <Link href="/login">
+                                <a>
+                                    <div>
+                                        <img src={game.img} alt={game.name}/>
+                                        <h3>{game.name}</h3>
+                                    </div>
+                                </a>
+                            </Link>))
+                }
                 </div>
 
                 

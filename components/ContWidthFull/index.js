@@ -1,8 +1,8 @@
-import { ContainerDiv } from './styles'
+import { ContainerDiv } from './styled'
 
-const ContWidthFull = (props, {children}) => {
+const ContWidthFull = (BColor, {children}) => {
     return (
-        <ContainerDiv BColor={props.BColor}>
+        <ContainerDiv>
             {children}
         </ContainerDiv>
     )

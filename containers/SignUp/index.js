@@ -1,11 +1,13 @@
 import {SignUpForm} from 'components';
+import { Container } from './styled';
 
 const SignUp = () => {
     return (
-        <div>
+        <Container>
             <h1>Registro</h1>
             <SignUpForm/>
-        </div>
+            <img src="/img/who_signup.png" alt="Quién se registra?"/>
+        </Container>
     )
 }
 
